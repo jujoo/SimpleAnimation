@@ -7,6 +7,13 @@ function preload(){
 
 function create(){
 	game.add.sprite(100,100, 'cow');
-	cow.animation.add('walk');
-	cow.animations.play('walk', 10, true);
+	cow.animations.add('walk');
+	cow.inputEnabled = true;
+	cow.events.onInputDown.add(cowClick, this);
+
+	cow.animations.play('walk', 10, true); //3프레임까지는 움직이고 클릭했을때 움직이게 
+}
+
+function cowClick() {
+  	cow.animations.play('walk', 10, false);
 }
