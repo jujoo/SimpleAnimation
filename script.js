@@ -6,7 +6,7 @@ function preload(){
 }
 
 function create(){
-	game.add.sprite(100,100, 'cow');
+	cow = game.add.sprite(100,100, 'cow');
 	cow.animations.add('walk');
 	cow.inputEnabled = true;
 	cow.events.onInputDown.add(cowClick, this);
