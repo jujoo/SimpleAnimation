@@ -6,7 +6,7 @@ var cow2
 
 function preload(){
 	game.load.spritesheet('cow', 'assets/cow.png', 100, 50);
-	game.load.spritesheet('cow', 'assets/cow2.png', 84, 45);
+	game.load.spritesheet('cow2', 'assets/cow2.png', 84, 45);
 	game.load.image('bg', 'assets/bg.jpg');
 }
 
