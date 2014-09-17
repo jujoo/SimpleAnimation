@@ -19,6 +19,9 @@ function create(){
 	cow.events.onInputDown.add(cowClick, this);
 
 	cow2 = game.add.sprite(200,100, 'cow2');
+	cow2.animations.add('walk');
+	cow2.inputEnabled = true;
+	cow2.events.onInputDown.add(cowClick, this);
 	//cow.animations.play('walk', 10, true); //3프레임까지는 움직이고 클릭했을때 4프레임부터 움직이게 
 }
 
