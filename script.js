@@ -25,6 +25,8 @@ function create(){
 	cow2 = game.add.sprite(200,100, 'cow2');
 
 	streetlamp = game.add.sprite(300,100, 'streetlamp');
+	streetlamp.animations.add('lamp');
+	streetlamp.animations.play('lamp', 10, true);
 
 	windmill = game.add.sprite(400,100, 'windmill');
 	windmill.animations.add('spin');
