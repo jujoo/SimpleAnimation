@@ -1,6 +1,6 @@
 var game = new Phaser.Game(1920, 1080, Phaser.AUTO, '', {preload: preload, create: create});
 var bg;
-var cows;
+var cows = [];
 var cow2;
 var streetlamp;
 var windmill;
@@ -20,7 +20,7 @@ function create(){
 	cows[0] = game.add.sprite(100,100, 'cow');
 	cows[0].animations.add('walk');
 	cows[0].inputEnabled = true;
-	cows[0].events.onInputDown.add(cowClick, this);
+	cows[0].events.onInputDown.add(cowClick0, this);
 
 	cows[1] = game.add.sprite(100,200, 'cow');
 	cows[1].animations.add('walk');
@@ -47,10 +47,14 @@ function create(){
 	//cow.animations.play('walk', 10, true); //3프레임까지는 움직이고 클릭했을때 4프레임부터 움직이게 
 }
 
-function cowClick() {
-  	cows[0].animations.play('walk', 10, false);
-  	cows[1].animations.play('walk', 20, false);
-  	cows[2].animations.play('walk', 30, false);
+//function cowClick() {
+// 	cows[0].animations.play('walk', 10, false);
+// 	cows[1].animations.play('walk', 20, false);
+// 	cows[2].animations.play('walk', 30, false);
 
-  	cow2.animations.play('walk', 10, false);
+// 	cow2.animations.play('walk', 10, false);
+//}
+function cowClick0() {
+	cows[0].animations.play('walk', 10, false);
+
 }
