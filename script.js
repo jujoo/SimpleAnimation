@@ -1,8 +1,8 @@
 var game = new Phaser.Game(1920, 1080, Phaser.AUTO, '', {preload: preload, create: create});
 var bg;
-var cows = [];
+var cow ;
 var cow2;
-var streetlamp;
+var streetlamp = [];
 var windmill;
 
 function preload(){
@@ -17,12 +17,20 @@ function preload(){
 function create(){
 	bg= game.add.sprite(0,0, 'bg');
 
-	cows[0] = game.add.sprite(100,100, 'cow');
-	cows[0].animations.add('walk');
-	cows[0].inputEnabled = true;
-	cows[0].events.onInputDown.add(cowClick0, this);
+	cow = game.add.sprite(100,100, 'cow');
+	cow.animations.add('eat', [0,1,2], 6, true, true );
+	cow.walkAnim = cow.animations.add('walk',[3,4,5,6],6,true,true);
+	var walkCompleted = function(){
+		cow.animations.play('eat');
+	}
+	cow.walkAnim.onComplete.add(walkCompleted, this);
 
-	cows[1] = game.add.sprite(100,200, 'cow');
+	cow.inputEnabled = true;
+	cow.events.onInputDown.add(cowClick0, this);
+	cow.animations.play('eat');
+
+
+	/*cows[1] = game.add.sprite(100,200, 'cow');
 	cows[1].animations.add('walk');
 	cows[1].inputEnabled = true;
 	cows[1].events.onInputDown.add(cowClick, this);
@@ -31,30 +39,28 @@ function create(){
 	cows[2].animations.add('walk');
 	cows[2].inputEnabled = true;
 	cows[2].events.onInputDown.add(cowClick, this);
-
-
+	*/
 
 	cow2 = game.add.sprite(200,100, 'cow2');
 
-	streetlamp = game.add.sprite(300,100, 'streetlamp');
-	streetlamp.animations.add('lamp');
-	streetlamp.animations.play('lamp', 5, true);
+	streetlamp[0] = game.add.sprite(300,100, 'streetlamp');
+	streetlamp[0].animations.add('lamp');
+	streetlamp[0].animations.play('lamp', 5, true);
 
 	windmill = game.add.sprite(400,100, 'windmill');
 	windmill.animations.add('spin');
-	windmill.animations.play('spin', 10, true);
+	windmill.animations.play('spin', 5, true);
 
 	//cow.animations.play('walk', 10, true); //3프레임까지는 움직이고 클릭했을때 4프레임부터 움직이게 
 }
 
-//function cowClick() {
+function cowClick() {
 // 	cows[0].animations.play('walk', 10, false);
 // 	cows[1].animations.play('walk', 20, false);
 // 	cows[2].animations.play('walk', 30, false);
 
 // 	cow2.animations.play('walk', 10, false);
-//}
+}
 function cowClick0() {
-	cows[0].animations.play('walk', 10, false);
-
+	cow.animations.play('walk',6,false);
 }
