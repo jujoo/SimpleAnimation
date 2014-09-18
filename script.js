@@ -1,6 +1,6 @@
 var game = new Phaser.Game(1920, 1080, Phaser.AUTO, '', {preload: preload, create: create});
 var bg;
-var cow;
+var cows;
 var cow2;
 var streetlamp;
 var windmill;
@@ -17,10 +17,22 @@ function preload(){
 function create(){
 	bg= game.add.sprite(0,0, 'bg');
 
-	cow = game.add.sprite(100,100, 'cow');
-	cow.animations.add('walk');
-	cow.inputEnabled = true;
-	cow.events.onInputDown.add(cowClick, this);
+	cows[0] = game.add.sprite(100,100, 'cow');
+	cows[0].animations.add('walk');
+	cows[0].inputEnabled = true;
+	cows[0].events.onInputDown.add(cowClick, this);
+
+	cows[1] = game.add.sprite(100,200, 'cow');
+	cows[1].animations.add('walk');
+	cows[1].inputEnabled = true;
+	cows[1].events.onInputDown.add(cowClick, this);
+
+	cows[2] = game.add.sprite(100,300, 'cow');
+	cows[2].animations.add('walk');
+	cows[2].inputEnabled = true;
+	cows[2].events.onInputDown.add(cowClick, this);
+
+
 
 	cow2 = game.add.sprite(200,100, 'cow2');
 
@@ -36,6 +48,9 @@ function create(){
 }
 
 function cowClick() {
-  	cow.animations.play('walk', 10, false);
+  	cows[0].animations.play('walk', 10, false);
+  	cows[1].animations.play('walk', 20, false);
+  	cows[2].animations.play('walk', 30, false);
+
   	cow2.animations.play('walk', 10, false);
 }
