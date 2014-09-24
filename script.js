@@ -11,15 +11,23 @@ function preload(){
 	game.load.spritesheet('streetlamp', 'assets/streetlamp.png', 39, 204);
 	game.load.spritesheet('windmill', 'assets/windmill.png', 176, 201);
 
+	/*추가 이미지*/
+	game.load.spritesheet('circle', 'assets/circle.png', 106, 126);
+	game.load.spritesheet('seesaw', 'assets/seesaw.png', 77, 103);
+	game.load.spritesheet('trapeze', 'assets/trapeze.png', 321, 112);
+	game.load.spritesheet('clock_tower', 'assets/clock_tower.png', 66, 215);
+	game.load.spritesheet('airballoon', 'assets/airballoon.png', 310, 540);
+	game.load.spritesheet('truck', 'assets/truck.png', 120, 65);
+
 	game.load.image('bg', 'assets/bg.jpg');
 }
 
 function create(){
 	bg= game.add.sprite(0,0, 'bg');
 
-	cow = game.add.sprite(100,100, 'cow');
-	cow.animations.add('eat', [0,1,2], 6, true, true );
-	cow.walkAnim = cow.animations.add('walk',[3,4,5,6],6,true,true);
+	cow = game.add.sprite(974,320, 'cow');
+	cow.animations.add('eat', [0,1,2,3,4,5], 9, true, true );
+	cow.walkAnim = cow.animations.add('walk',[6,7,8,9],9,true,true);
 	var walkCompleted = function(){
 		cow.animations.play('eat');
 	}
@@ -41,15 +49,25 @@ function create(){
 	cows[2].events.onInputDown.add(cowClick, this);
 	*/
 
-	cow2 = game.add.sprite(200,100, 'cow2');
+	cow2 = game.add.sprite(980,354, 'cow2');
 
-	streetlamp[0] = game.add.sprite(300,100, 'streetlamp');
+	streetlamp[0] = game.add.sprite(1454,373, 'streetlamp');
 	streetlamp[0].animations.add('lamp');
 	streetlamp[0].animations.play('lamp', 5, true);
 
-	windmill = game.add.sprite(400,100, 'windmill');
+	windmill = game.add.sprite(1018,200, 'windmill');
 	windmill.animations.add('spin');
 	windmill.animations.play('spin', 5, true);
+
+	/*추가 이미지*/
+	circle = game.add.sprite(1621,292, 'circle');
+	seesaw = game.add.sprite(1865,310, 'seesaw');
+	trapeze = game.add.sprite(1700,287, 'trapeze');
+	clock_tower = game.add.sprite(1605,548, 'clock_tower');
+	airballoon = game.add.sprite(1671,310, 'airballoon');
+	truck = game.add.sprite(772,662, 'truck');
+
+
 
 	//cow.animations.play('walk', 10, true); //3프레임까지는 움직이고 클릭했을때 4프레임부터 움직이게 
 }
