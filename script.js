@@ -25,7 +25,7 @@ function preload(){
 function create(){
 	bg= game.add.sprite(0,0, 'bg');
 
-	cow = game.add.sprite(974,320, 'cow');
+	cow = game.add.sprite(1948,640, 'cow');
 	cow.animations.add('eat', [0,1,2,3,4,5], 9, true, true );
 	cow.walkAnim = cow.animations.add('walk',[6,7,8,9],9,true,true);
 	var walkCompleted = function(){
