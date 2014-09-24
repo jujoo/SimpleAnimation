@@ -1,4 +1,4 @@
-var game = new Phaser.Game(1920, 1080, Phaser.AUTO, '', {preload: preload, create: create});
+var game = new Phaser.Game(3840, 2160, Phaser.AUTO, '', {preload: preload, create: create});
 var bg;
 var cow ;
 var cow2;
