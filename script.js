@@ -49,23 +49,23 @@ function create(){
 	cows[2].events.onInputDown.add(cowClick, this);
 	*/
 
-	cow2 = game.add.sprite(980,354, 'cow2');
+	cow2 = game.add.sprite(1960,708, 'cow2');
 
-	streetlamp[0] = game.add.sprite(1454,373, 'streetlamp');
+	streetlamp[0] = game.add.sprite(2908,746, 'streetlamp');
 	streetlamp[0].animations.add('lamp');
 	streetlamp[0].animations.play('lamp', 5, true);
 
-	windmill = game.add.sprite(1018,200, 'windmill');
+	windmill = game.add.sprite(2036,400, 'windmill');
 	windmill.animations.add('spin');
 	windmill.animations.play('spin', 5, true);
 
 	/*추가 이미지*/
-	circle = game.add.sprite(1621,292, 'circle');
-	seesaw = game.add.sprite(1865,310, 'seesaw');
-	trapeze = game.add.sprite(1700,287, 'trapeze');
-	clock_tower = game.add.sprite(1605,548, 'clock_tower');
-	airballoon = game.add.sprite(1671,310, 'airballoon');
-	truck = game.add.sprite(772,662, 'truck');
+	circle = game.add.sprite(3242,584, 'circle');
+	seesaw = game.add.sprite(3730,620, 'seesaw');
+	trapeze = game.add.sprite(3400,574, 'trapeze');
+	clock_tower = game.add.sprite(3210,1096, 'clock_tower');
+	airballoon = game.add.sprite(3342,620, 'airballoon');
+	truck = game.add.sprite(1544,1324, 'truck');
 
 
 
