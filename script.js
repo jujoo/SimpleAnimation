@@ -27,18 +27,42 @@ function create(){
 	bg= game.add.sprite(0,0, 'bg');
 
 	cow = game.add.sprite(1948,640, 'cow');
-	cow.animations.add('eat', [0,1,2,3,4,5], 9, true, true );
-	cow.inputEnabled = true;
-	cow.input.enableDrag(true);
-	cow.walkAnim = cow.animations.add('walk',[6,7,8,9],9,true,true);
-	var walkCompleted = function(){
-		cow.animations.play('eat');
+	cow.anchor.x = 0.5;
+	cow.anchor.y = 0.5;
+	cow.animations.add('eat', [0,1,2,3,4,5]);
+	cow.animations.add('walk', [6,7,8,9] );
+
+	var cowDown = function() {
+		cow.scale.x = 4;
+		cow.scale.y = 4;
+		cow.animations.play('walk', 9, true);
 	}
-	cow.walkAnim.onComplete.add(walkCompleted, this);
+
+	var cowUp = function() {
+		cow.scale.x = 1;
+		cow.scale.y = 1;
+		cow.animations.play('eat', 9, true);
+	}
+
 
 	cow.inputEnabled = true;
+	cow.input.enableDrag(true);
+	cow.events.onInputDown.add(cowDown, this);
+	cow.events.onInputUp.add(cowUp, this);
+	cow.animations.play('eat', 9, true);
+
+	// cow.animations.add('eat', [0,1,2,3,4,5], 9, true, true );
+	// cow.inputEnabled = true;
+	// cow.input.enableDrag(true);
+	// cow.walkAnim = cow.animations.add('walk',[6,7,8,9],9,true,true);
+	// var walkCompleted = function(){
+	// 	cow.animations.play('eat');
+	// }
+	// cow.walkAnim.onComplete.add(walkCompleted, this);
+
+	// cow.inputEnabled = true;
 	//cow.events.onInputDown.add(cowClick0, this);
-	cow.animations.play('eat');
+	// cow.animations.play('eat');
 
 	cow2 = game.add.sprite(1960,708, 'cow2');
 
@@ -67,15 +91,12 @@ function create(){
 	game.input.onDown.add(cowBurst, this);
 
 }
-var cowClick = function() {
-	var clickComplete = function() {
-		cow.animations.play('growl', 5, true);
-	}
-	cow.animations.play('walk', 5, false).complete = clickComplete;
-}
-cow.inputEnabled = true;
-cow.events.onInputDown.add(cowClick, this);
-cow.animations.play('growl', 5, true);
+// var cowClick = function() {
+// 	var clickComplete = function() {
+// 		cow.animations.play('growl', 5, true);
+// 	}
+// 	cow.animations.play('walk', 5, false).complete = clickComplete;
+// }
 
 //function cowClick() {
 // 	cows[0].animations.play('walk', 10, false);
