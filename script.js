@@ -79,14 +79,23 @@ function create(){
 	game.input.onDown.add(cowBurst, this);
 
 }
+var cowClick = function() {
+	var clickComplete = function() {
+		cow.animations.play('growl', 5, true);
+	}
+	cow.animations.play('walk', 5, false).complete = clickComplete;
+}
+cow.inputEnabled = true;
+cow.events.onInputDown.add(cowClick, this);
+cow.animations.play('growl', 5, true);
 
-function cowClick() {
+//function cowClick() {
 // 	cows[0].animations.play('walk', 10, false);
 // 	cows[1].animations.play('walk', 20, false);
 // 	cows[2].animations.play('walk', 30, false);
 
 // 	cow2.animations.play('walk', 10, false);
-}
+//}
 // function cowClick0() {
 // 	cow.animations.play('walk',6,false);
 // }
