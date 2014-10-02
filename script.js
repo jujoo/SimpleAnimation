@@ -4,6 +4,7 @@ var cow ;
 var cow2;
 var streetlamp = [];
 var windmill;
+var cowEmitter;
 
 function preload(){
 	game.load.spritesheet('cow', 'assets/cow.png', 100, 50);
@@ -68,8 +69,10 @@ function create(){
 	truck = game.add.sprite(1544,1324, 'truck');
 
 
+	cowEmitter = game.add.emitter(100, 100); // x, y 좌표
+	cowEmitter.makeParticles('cow');
+	cowEmitter.start(true, 2000, null, 10); // 폭발(t/f), 수명(ms), 주기(ms), 갯수
 
-	//cow.animations.play('walk', 10, true); //3프레임까지는 움직이고 클릭했을때 4프레임부터 움직이게 
 }
 
 function cowClick() {
