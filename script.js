@@ -35,7 +35,7 @@ function create(){
 	cow.walkAnim.onComplete.add(walkCompleted, this);
 
 	cow.inputEnabled = true;
-	cow.events.onInputDown.add(cowClick0, this);
+	//cow.events.onInputDown.add(cowClick0, this);
 	cow.animations.play('eat');
 
 
@@ -70,11 +70,11 @@ function create(){
 
 
 	/*파티클*/
-	cowEmitter = game.add.emitter(100, 100); // x, y 좌표
-	cowEmitter.makeParticles('cow');
+	game = game.add.emitter(100, 100); // x, y 좌표
+	game.makeParticles('cow');
 	//cowEmitter.start(false, 2000, 1000, 10); // 폭발(t/f), 수명(ms), 주기(ms), 갯수  - true 한버네 다나옴/false- 주기를 설정하고 순차적으로나옴
-	cowEmitter.gravity = 1000; //중력 - 숫자가 커질수록 빠르다(밑으로 떨어짐)
-	cowEmitter.events.onInputDown.add(cowBurst, this);
+	game.gravity = 1000; //중력 - 숫자가 커질수록 빠르다(밑으로 떨어짐)
+	game.events.onInputDown.add(cowBurst, this);
 }
 
 function cowClick() {
@@ -88,5 +88,5 @@ function cowClick() {
 //	cow.animations.play('walk',6,false);
 //}
 function cowBurst() {
-	cowEmitter.start(false, 2000, 1000, 10);
+	game.start(false, 2000, 1000, 10);
 }
