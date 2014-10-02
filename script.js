@@ -34,14 +34,17 @@ function create(){
 	cow.animations.add('walk', [6,7,8,9] );
 
 	var cowDown = function() {
-		cow.scale.x = 4;
-		cow.scale.y = 4;
+		game.add.tween(cow.scale).to({x:4,y:4},1000,Phaser.Easing.Elastic.Out,true);
+		// cow.scale.x = 4;
+		// cow.scale.y = 4;
 		cow.animations.play('walk', 9, true);
 	}
 
 	var cowUp = function() {
-		cow.scale.x = 1;
-		cow.scale.y = 1;
+		game.add.tween(cow.scale).to({x:1,y:1},1000,Phaser.Easing.Elastic.Out,true);
+
+		// cow.scale.x = 1;
+		// cow.scale.y = 1;
 		cow.animations.play('eat', 9, true);
 	}
 
