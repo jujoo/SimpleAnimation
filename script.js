@@ -72,8 +72,9 @@ function create(){
 	/*파티클*/
 	cowEmitter = game.add.emitter(100, 100); // x, y 좌표
 	cowEmitter.makeParticles('cow');
-	cowEmitter.start(false, 2000, 1000, 10); // 폭발(t/f), 수명(ms), 주기(ms), 갯수  - true 한버네 다나옴/false- 주기를 설정하고 순차적으로나옴
+	//cowEmitter.start(false, 2000, 1000, 10); // 폭발(t/f), 수명(ms), 주기(ms), 갯수  - true 한버네 다나옴/false- 주기를 설정하고 순차적으로나옴
 	cowEmitter.gravity = 1000; //중력 - 숫자가 커질수록 빠르다(밑으로 떨어짐)
+	cowEmitter.events.onInputDown.add(cowClick2)
 }
 
 function cowClick() {
@@ -85,4 +86,7 @@ function cowClick() {
 }
 function cowClick0() {
 	cow.animations.play('walk',6,false);
+}
+function cowClick2() {
+	cowEmitter.start((false, 2000, 1000, 10);
 }
