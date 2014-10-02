@@ -26,6 +26,7 @@ function preload(){
 function create(){
 	bg= game.add.sprite(0,0, 'bg');
 
+	//드래그 이벤트
 	cow = game.add.sprite(1948,640, 'cow');
 	cow.anchor.x = 0.5;
 	cow.anchor.y = 0.5;
