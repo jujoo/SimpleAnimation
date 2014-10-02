@@ -40,18 +40,6 @@ function create(){
 	//cow.events.onInputDown.add(cowClick0, this);
 	cow.animations.play('eat');
 
-
-	/*cows[1] = game.add.sprite(100,200, 'cow');
-	cows[1].animations.add('walk');
-	cows[1].inputEnabled = true;
-	cows[1].events.onInputDown.add(cowClick, this);
-
-	cows[2] = game.add.sprite(100,300, 'cow');
-	cows[2].animations.add('walk');
-	cows[2].inputEnabled = true;
-	cows[2].events.onInputDown.add(cowClick, this);
-	*/
-
 	cow2 = game.add.sprite(1960,708, 'cow2');
 
 	streetlamp[0] = game.add.sprite(2908,746, 'streetlamp');
@@ -99,11 +87,13 @@ cow.animations.play('growl', 5, true);
 // function cowClick0() {
 // 	cow.animations.play('walk',6,false);
 // }
+
+
 function cowBurst(mouse) {
-	cowEmitter.start(true, 2000, null, 10);
+	// cowEmitter.start(true, 2000, null, 10);
 
-	cowEmitter.x = mouse.x;
-	cowEmitter.y = mouse.y;
+	// cowEmitter.x = mouse.x;
+	// cowEmitter.y = mouse.y;
 
-	console.log("x: " + mouse.x + "y:" + mouse.y);
+	// console.log("x: " + mouse.x + "y:" + mouse.y);
 }
