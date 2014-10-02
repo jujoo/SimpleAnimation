@@ -89,5 +89,5 @@ function cowClick() {
 //	cow.animations.play('walk',6,false);
 //}
 function cowBurst() {
-	cowEmitter.start(false, 2000, 1000, 10);
+	cowEmitter.start(true, 2000, null, 10);
 }
