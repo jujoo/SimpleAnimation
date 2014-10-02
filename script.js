@@ -28,6 +28,7 @@ function create(){
 
 	cow = game.add.sprite(1948,640, 'cow');
 	cow.animations.add('eat', [0,1,2,3,4,5], 9, true, true );
+	cow.input.enableDrag(true);
 	cow.walkAnim = cow.animations.add('walk',[6,7,8,9],9,true,true);
 	var walkCompleted = function(){
 		cow.animations.play('eat');
@@ -88,6 +89,11 @@ function cowClick() {
 //function cowClick0() {
 //	cow.animations.play('walk',6,false);
 //}
-function cowBurst() {
+function cowBurst(mouse) {
 	cowEmitter.start(true, 2000, null, 10);
+
+	cowEmitter.x = mouse.x;
+	cowEmitter.y = mouse.y;
+
+	console.log("x: " + mouse.x + "y:" + mouse.y);
 }
