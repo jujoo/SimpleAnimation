@@ -20,13 +20,36 @@ function preload(){
 	game.load.spritesheet('airballoon', 'assets/airballoon.png', 310, 540);
 	game.load.spritesheet('truck', 'assets/truck.png', 120, 65);
 
+	// 추가배경이미지
 	game.load.image('bg', 'assets/bg.jpg');
+	game.load.image('bg_playground', 'assets/bg_playground.png');
+	game.load.image('bg_air2', 'assets/bg_airballoon2.png');
+	game.load.image('bg_air1', 'assets/bg_airballoon1.png');
+	game.load.image('bg_farm2', 'assets/bg_farm2.png');
+	game.load.image('bg_farm1', 'assets/bg_farm1.png');
+	game.load.image('bg_construction2', 'assets/bg_construction2.png');
+	game.load.image('bg_construction1', 'assets/bg_construction1.png');
+
+
 }
 
 function create(){
 	bg= game.add.sprite(0,0, 'bg');
+<<<<<<< HEAD
+	// 추가 배경이미지
+	bg= game.add.sprite(2778,458, 'bg_playground');
+	bg= game.add.sprite(2878, 804, 'bg_air2');
+	bg= game.add.sprite(2878, 1105, 'bg_air1');
+	bg= game.add.sprite(1604, 458, 'bg_farm2');
+	bg= game.add.sprite(1604, 860, 'bg_farm1');
+	bg= game.add.sprite(866, 423, 'bg_construction2');
+	bg= game.add.sprite(866, 819, 'bg_construction1');
+
+	// cow 드래그 가능하게 수정
+=======
 
 	//드래그 이벤트
+>>>>>>> origin/gh-pages
 	cow = game.add.sprite(1948,640, 'cow');
 	cow.anchor.x = 0.5;
 	cow.anchor.y = 0.5;
