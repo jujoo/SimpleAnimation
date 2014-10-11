@@ -37,7 +37,7 @@ function preload(){
 
 function create(){
 	bg= game.add.sprite(0,0, 'bg');
-<<<<<<< HEAD
+// <<<<<<< HEAD
 	// 추가 배경이미지
 	bg= game.add.sprite(2778,458, 'bg_playground');
 	bg= game.add.sprite(2878, 804, 'bg_air2');
@@ -48,10 +48,10 @@ function create(){
 	bg= game.add.sprite(866, 819, 'bg_construction1');
 
 	// cow 드래그 가능하게 수정
-=======
+// =======
 
 	//드래그 이벤트
->>>>>>> origin/gh-pages
+// >>>>>>> origin/gh-pages
 	cow = game.add.sprite(1948,640, 'cow');
 	cow.anchor.x = 0.5;
 	cow.anchor.y = 0.5;
