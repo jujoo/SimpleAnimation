@@ -7,9 +7,9 @@ var windmill;
 var cowEmitter;
 
 function preload(){
-	game.load.spritesheet('cow', 'assets/cow.png', 100, 50);
+	game.load.spritesheet('cow', 'assets/cow.png', 100, 50); //드래깅하도록 적혀있음 붙여넣어주세요
 	game.load.spritesheet('cow2', 'assets/cow2.png', 84, 45);
-	game.load.spritesheet('streetlamp', 'assets/streetlamp.png', 39, 204);
+	game.load.spritesheet('streetlamp', 'assets/streetlamp.png', 39, 204); //총4개가 배치되도록
 	game.load.spritesheet('windmill', 'assets/windmill.png', 176, 201);
 
 	/*추가 이미지*/
@@ -17,9 +17,11 @@ function preload(){
 	game.load.spritesheet('seesaw', 'assets/seesaw.png', 77, 103);
 	game.load.spritesheet('trapeze', 'assets/trapeze.png', 321, 112);
 	game.load.spritesheet('clock_tower', 'assets/clock_tower.png', 66, 215);
-	game.load.spritesheet('airballoon', 'assets/airballoon.png', 310, 540);
+	game.load.spritesheet('airballoon', 'assets/airballoon.png', 310, 540); //airballoon_move.png 파일을 클릭하면 위로 올라가도록
 	game.load.spritesheet('truck', 'assets/truck.png', 120, 65);
-
+	
+	// 추가이미지 
+	game.load.spritesheet('farmcar', 'assets/farmcar.png', 48, 120); //0.1.2.3.4.5 로 계속 돌아가다가 6~13까지 앞으로 움직이게
 	// 추가배경이미지
 	game.load.image('bg', 'assets/bg.jpg');
 	game.load.image('bg_playground', 'assets/bg_playground.png');
@@ -108,6 +110,9 @@ function create(){
 	clock_tower = game.add.sprite(3210,1096, 'clock_tower');
 	airballoon = game.add.sprite(3342,620, 'airballoon');
 	truck = game.add.sprite(1544,1324, 'truck');
+	// 추가이미지
+	farmcar = game.add.sprite(1670,576, 'farmcar');
+
 
 
 	/*파티클*/
